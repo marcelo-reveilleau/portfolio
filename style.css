@@ -1,73 +1,195 @@
+/* --- ESTILOS GERAIS --- */
+
+/* Estilos aplicados a todo o corpo da página para reset e tipografia básica */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif; /* Fonte padrão, limpa e legível */
+    margin: 0; /* Remove margem externa padrão do navegador */
+    padding: 0; /* Remove preenchimento interno padrão do navegador */
+    background-color: #F5F7FA; /* Cor de fundo principal, um cinza-azulado muito claro */
+    color: #2C3E50; /* Cor de texto padrão, um azul-marinho escuro */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade do texto */
 }
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
-    margin: 20px 0;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 15px;
-}
-
-nav a:hover {
-    background: #e8491d;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
+/* Estilos para títulos de nível 1, 2 e 3 */
 h1, h2, h3 {
-    color: #35424a;
+    color: #2C3E50; /* Cor escura para os títulos, mantendo consistência */
+    margin-bottom: 15px; /* Espaçamento abaixo dos títulos */
+    text-align: center; /* Centraliza todos os títulos por padrão */
 }
 
+/* Estilo para um contêiner que centraliza o conteúdo e adiciona espaçamento lateral */
+.container {
+    width: 90%; /* Largura do contêiner, um pouco mais largo para telas maiores */
+    max-width: 1100px; /* Largura máxima para evitar que o conteúdo fique muito esticado em telas muito grandes */
+    margin: auto; /* Centraliza o contêiner horizontalmente */
+    overflow: hidden; /* Garante que elementos flutuantes dentro não causem problemas de layout */
+    padding: 0 20px; /* Preenchimento lateral para evitar que o conteúdo toque as bordas da tela */
+}
+
+
+/* --- CABEÇALHO --- */
+
+/* Estilos para a seção do cabeçalho */
+header {
+    background: #2C3E50; /* Cor de fundo escura, correspondente à cor principal de texto */
+    color: #ffffff; /* Cor do texto dentro do cabeçalho (branco) */
+    padding: 20px 0; /* Preenchimento interno generoso para o cabeçalho */
+    text-align: center; /* Centraliza o conteúdo (texto e navegação) no cabeçalho */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+}
+
+/* Estilos para a navegação dentro do cabeçalho */
+nav ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding: 0; /* Remove preenchimento padrão da lista */
+    display: flex; /* Usa flexbox para alinhar os itens da lista horizontalmente */
+    justify-content: center; /* Centraliza os itens do menu */
+    margin-top: 15px; /* Espaçamento entre o título do cabeçalho e o menu */
+}
+
+/* Estilos para cada item do menu */
+nav ul li {
+    margin: 0 15px; /* Espaçamento entre os itens do menu */
+}
+
+/* Estilos para os links de navegação */
+nav ul li a {
+    color: #ffffff; /* Cor do texto do link (branco) */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    padding: 8px 15px; /* Preenchimento interno para os links, criando uma área clicável maior */
+    border-radius: 4px; /* Cantos levemente arredondados para os links */
+    transition: background-color 0.3s ease; /* Transição suave na mudança de cor de fundo ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre os links de navegação */
+nav ul li a:hover {
+    background-color: #E67E22; /* Cor de destaque ao passar o mouse */
+}
+
+
+/* --- SEÇÕES PRINCIPAIS (MAIN) --- */
+
+/* Estilos para a área de conteúdo principal */
+main {
+    padding: 40px 0; /* Mais preenchimento superior e inferior para separar seções */
+    min-height: calc(100vh - 180px); /* Garante que o main ocupe a maior parte da tela, empurrando o rodapé para baixo */
+    display: flex; /* Usado para centralizar conteúdo verticalmente se necessário, ou para layout de colunas */
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+
+/* --- RODAPÉ --- */
+
+/* Estilos para o rodapé do site */
 footer {
-    background: #35424a;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background: #2C3E50; /* Cor de fundo escura, igual ao cabeçalho */
+    color: #ffffff; /* Cor do texto do rodapé (branco) */
+    text-align: center; /* Centraliza o texto no rodapé */
+    padding: 20px 0; /* Preenchimento interno generoso */
+    /* Remove position: relative e bottom: 0 se estiver usando min-height no main ou display:flex no body */
+    width: 100%; /* Garante que o rodapé ocupe a largura total */
 }
 
+
+/* --- FORMULÁRIO (PÁGINA DE CONTATO) --- */
+
+/* Estilos para o formulário de contato */
 form {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff; /* Cor de fundo branca para o formulário */
+    padding: 30px; /* Mais preenchimento interno */
+    border-radius: 8px; /* Cantos mais arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada para destaque */
+    max-width: 500px; /* Largura máxima para o formulário, mantendo-o compacto */
+    margin: 30px auto; /* Centraliza e adiciona margem acima e abaixo */
+    display: flex; /* Usa flexbox para melhor controle do layout dos campos */
+    flex-direction: column; /* Organiza os campos em coluna */
+    gap: 15px; /* Espaçamento entre os elementos do formulário */
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Estilos para os rótulos (labels) dos campos do formulário */
+form label {
+    font-weight: bold; /* Deixa o texto do rótulo em negrito */
+    color: #2C3E50; /* Cor de texto escura para os rótulos */
 }
 
-form input[type="submit"] {
-    background: #35424a;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
+/* Estilos para os campos de entrada de texto e área de texto */
+form input:not([type="submit"]), /* Seleciona todos os inputs que não são submit */
+form textarea {
+    width: 100%; /* Ocupa a largura total do contêiner do formulário */
+    padding: 12px; /* Preenchimento interno maior para os campos */
+    border: 1px solid #D1D8E0; /* Borda mais suave */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave para foco */
 }
 
-form input[type="submit"]:hover {
-    background: #e8491d;
+/* Estilo para os campos de input e textarea quando estão em foco */
+form input:focus,
+form textarea:focus {
+    border-color: #E67E22; /* Borda colorida ao focar */
+    outline: none; /* Remove o contorno padrão do navegador */
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.2); /* Sombra suave de destaque */
+}
+
+/* Estilo específico para o campo de mensagem (textarea) */
+form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 120px; /* Altura mínima para o campo de mensagem */
+}
+
+/* Estilo para o botão de envio do formulário */
+form button[type="submit"] {
+    background: #E67E22; /* Cor de destaque para o botão */
+    color: #ffffff; /* Cor do texto do botão (branco) */
+    border: none; /* Remove a borda */
+    padding: 12px 25px; /* Preenchimento interno do botão */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Muda o cursor para indicar clicável */
+    font-size: 1.1rem; /* Tamanho de fonte maior para o botão */
+    font-weight: bold; /* Texto do botão em negrito */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para hover */
+    align-self: center; /* Centraliza o botão dentro do formulário flex */
+    width: auto; /* Ajusta a largura do botão ao seu conteúdo */
+}
+
+/* Efeito ao passar o mouse sobre o botão de envio */
+form button[type="submit"]:hover {
+    background-color: #D35400; /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px); /* Pequeno movimento para cima para feedback visual */
+}
+
+
+/* --- RESPONSIVIDADE BÁSICA --- */
+
+/* Media query para telas menores (ex: celulares) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Aumenta a largura do contêiner para ocupar mais espaço em telas pequenas */
+        padding: 0 15px; /* Ajusta o preenchimento lateral */
+    }
+
+    nav ul {
+        flex-direction: column; /* Empilha os itens do menu verticalmente em telas pequenas */
+        margin-top: 10px; /* Ajusta a margem */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Ajusta a margem vertical entre os itens do menu empilhados */
+    }
+
+    header {
+        padding: 15px 0; /* Ajusta o preenchimento do cabeçalho */
+    }
+
+    main {
+        padding: 30px 0; /* Ajusta o preenchimento do conteúdo principal */
+    }
+
+    form {
+        margin: 20px auto; /* Ajusta a margem do formulário */
+        padding: 20px; /* Ajusta o preenchimento do formulário */
+    }
 }
